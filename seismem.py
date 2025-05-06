@@ -1,4 +1,19 @@
-''' SeisMem | Load multiple obspy seismic streams into one dictionary object. This dictionary can be saved to disk in one file to avoid having many small stream files, and reread into SeisMem object. This saving is done by formatting the loaded obspy stream objects into SAC format and then Base64 encoding them into a string.
+'''
+    SeisMem | Load multiple obspy seismic streams into one dictionary object.
+    Copyright (C) 2025  Yingbo Li
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 '''
 
 import obspy
