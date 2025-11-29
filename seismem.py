@@ -41,8 +41,14 @@ def bytesstr2obspy(bytesstr):
     return o
 
 class SeisMem():
-    def __init__(self):
+    def __init__(self,load_file=None):
         self.storage = {}
+        if load_file:
+            try:
+                self.load(load_file)
+            except:
+                print("Failed to load",str(load_file))
+        return
     def __add__(self,other):
         self.storage = self.storage | other.storage
         return
@@ -53,6 +59,8 @@ class SeisMem():
         stream = obspy.read(stream_path)
         self.add(stream,name)
         return
+    def list_stream_names(self):
+        return list(self.storage.keys())
     def get(self,stream_name):
         return self.storage[stream_name]
     def dump(self,out):
